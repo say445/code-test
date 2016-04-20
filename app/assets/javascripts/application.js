@@ -15,3 +15,21 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  
+  $('#citizen-btn').on("click", function() {
+    $('#customer_organisation').prop("disabled", true);
+    $('#customer_tite').prop("disabled", false);
+    $('#customer_first_name').prop("disabled", false);
+    $('#customer_last_name').prop("disabled", false);
+  });
+
+  $('#organisation-btn').on("click", function() {
+    $("#new_customer :input").prop("disabled", false);
+  });
+
+  $('#anonymous-btn').on("click", function() {
+    $("#new_customer :input").prop("disabled", true);
+  });
+});

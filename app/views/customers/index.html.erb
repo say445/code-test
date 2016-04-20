@@ -1,2 +1,42 @@
-<h1>Customers#index</h1>
-<p>Find me in app/views/customers/index.html.erb</p>
+
+<nav class="row">
+  <h1 class="col-md-12">Queue App</h1>
+</nav>
+
+<div id="container">
+  <div class="row">
+    <div class="col-md-6" id="left-col">
+      <h3>New Customer</h3>
+      <div class="btn-group" data-toggle="buttons" id="options">
+        <label class="btn btn-primary active" id="citizen-btn">
+          <input type="radio" name="options" id="citizen" autocomplete="off"> 
+          Citizen
+        </label>
+        <label class="btn btn-primary" id="organisation-btn">
+          <input type="radio" name="options" id="organisation" autocomplete="off"> Organisation
+        </label>
+        <label class="btn btn-primary" id="anonymous-btn">
+          <input type="radio" name="options" id="anonymous" autocomplete="off"> Anonymous
+        </label>
+      </div>
+      <%= form_for @customer do |f| %>
+        <%= f.label "organisation" %>
+        <%= f.text_field "organisation", class: "form-control", :disabled => "true" %>
+
+        <%= f.label "title" %>
+        <%= f.text_field "title", class: "form-control" %>
+
+        <%= f.label "first_name" %>
+        <%= f.text_field "first_name", class: "form-control" %>
+
+        <%= f.label "last_name" %>
+        <%= f.text_field "last_name", class: "form-control" %>
+
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+    <div class="col-md-6" id="right-col">
+      <h4>Waiting in queue</h4>
+    </div>
+  </div>
+</div>
