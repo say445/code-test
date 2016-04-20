@@ -20,7 +20,7 @@ $(document).ready(function(){
   
   $('#citizen-btn').on("click", function() {
     $('#customer_organisation').prop("disabled", true);
-    $('#customer_tite').prop("disabled", false);
+    $('#customer_title').prop("disabled", false);
     $('#customer_first_name').prop("disabled", false);
     $('#customer_last_name').prop("disabled", false);
   });
