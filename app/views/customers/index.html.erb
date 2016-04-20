@@ -19,7 +19,7 @@
           <input type="radio" name="options" id="anonymous" autocomplete="off"> Anonymous
         </label>
       </div>
-      <%= form_for @customer do |f| %>
+      <%= form_for @customer, remote: true do |f| %>
         <%= f.label "organisation" %>
         <%= f.text_field "organisation", class: "form-control", :disabled => "true" %>
 
@@ -36,7 +36,7 @@
       <% end %>
     </div>
     <div class="col-md-6" id="right-col">
-      <h4>Waiting in queue</h4>
+      <h4>Waiting in queue:</h4>
     </div>
   </div>
 </div>
