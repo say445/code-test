@@ -17,8 +17,13 @@
 //= require_tree .
 
 $(document).ready(function(){
+  $('#customer_organisation').prop("disabled", true);
+  $('#customer_title').prop("disabled", false);
+  $('#customer_first_name').prop("disabled", false);
+  $('#customer_last_name').prop("disabled", false);
   
   $('#citizen-btn').on("click", function() {
+    $('input:text').val('');
     $('#customer_organisation').prop("disabled", true);
     $('#customer_title').prop("disabled", false);
     $('#customer_first_name').prop("disabled", false);
@@ -26,10 +31,18 @@ $(document).ready(function(){
   });
 
   $('#organisation-btn').on("click", function() {
-    $("#new_customer :input").prop("disabled", false);
+    $('input:text').val('');
+    $('#customer_organisation').prop("disabled", false);
+    $('#customer_title').prop("disabled", true);
+    $('#customer_first_name').prop("disabled", true);
+    $('#customer_last_name').prop("disabled", true);
   });
 
   $('#anonymous-btn').on("click", function() {
-    $("#new_customer :input").prop("disabled", true);
+    $('input:text').val('');
+    $('#customer_organisation').prop("disabled", true);
+    $('#customer_title').prop("disabled", true);
+    $('#customer_first_name').prop("disabled", true);
+    $('#customer_last_name').prop("disabled", true);
   });
 });

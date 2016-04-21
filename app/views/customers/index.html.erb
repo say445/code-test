@@ -7,24 +7,39 @@
   <div class="row">
     <div class="col-md-6" id="left-col">
       <h3>New Customer</h3>
-      <div class="btn-group" data-toggle="buttons" id="options">
-        <label class="btn btn-primary active" id="citizen-btn">
-          <input type="radio" name="options" id="citizen" autocomplete="off"> 
-          Citizen
-        </label>
-        <label class="btn btn-primary" id="organisation-btn">
-          <input type="radio" name="options" id="organisation" autocomplete="off"> Organisation
-        </label>
-        <label class="btn btn-primary" id="anonymous-btn">
-          <input type="radio" name="options" id="anonymous" autocomplete="off"> Anonymous
-        </label>
-      </div>
+
       <%= form_for @customer, remote: true do |f| %>
+        <div class="btn-group" data-toggle="buttons" >
+
+          <label class="btn btn-primary active" id="citizen-btn" for="customer_type">
+            <%= f.radio_button "type", "citizen" %> Citizen
+          </label>
+          
+          <label class="btn btn-primary" id="organisation-btn">
+            <%= f.radio_button "type", "organisation" %> Organisation
+          </label>
+
+          <label class="btn btn-primary" id="anonymous-btn">
+            <%= f.radio_button "type", "anonymous" %> Anonymous
+          </label>
+        </div><br><br>
+
+        <%= f.radio_button "service", "housing", checked: true %>
+        <%= f.label "service", "housing" %><br>
+        <%= f.radio_button "service", "benefits", checked: true %>
+        <%= f.label "service", "benefits" %><br>
+        <%= f.radio_button "service", "council-tax", checked: true %>
+        <%= f.label "service", "council-tax" %><br>
+        <%= f.radio_button "service", "flytipping", checked: true %>
+        <%= f.label "service", "flytipping" %><br>
+        <%= f.radio_button "service", "missed-bin", checked: true %>
+        <%= f.label "service", "missed-bin" %><br><br>
+        
         <%= f.label "organisation" %>
-        <%= f.text_field "organisation", class: "form-control", :disabled => "true" %>
+        <%= f.text_field "organisation", class: "form-control"%>
 
         <%= f.label "title" %>
-        <%= f.text_field "title", class: "form-control" %>
+        <%= f.select "title", [["Mr", "Mr"], ["Mrs", "Mrs"], ["Ms", "Ms"]], {}, {class: "form-control"} %>
 
         <%= f.label "first_name" %>
         <%= f.text_field "first_name", class: "form-control" %>
@@ -35,8 +50,27 @@
         <%= f.submit "Submit", class: "btn btn-primary" %>
       <% end %>
     </div>
-    <div class="col-md-6" id="right-col">
+    <div class="col-md-6 pre-scrollable" id="right-col">
       <h4>Waiting in queue:</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Service</th>
+            <th>Queued at</th>
+          </tr>
+        </thead>
+        <tbody id="queue">
+          
+        </tbody>
+      </table>
+
+
+
+         <div id="queue" class="list-group row">
+        </div>
+      </ol>
     </div>
   </div>
 </div>
