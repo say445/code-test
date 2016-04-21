@@ -26,12 +26,16 @@
 
         <%= f.radio_button "service", "housing", checked: true %>
         <%= f.label "service", "housing" %><br>
+
         <%= f.radio_button "service", "benefits", checked: true %>
         <%= f.label "service", "benefits" %><br>
+
         <%= f.radio_button "service", "council-tax", checked: true %>
         <%= f.label "service", "council-tax" %><br>
+
         <%= f.radio_button "service", "flytipping", checked: true %>
         <%= f.label "service", "flytipping" %><br>
+
         <%= f.radio_button "service", "missed-bin", checked: true %>
         <%= f.label "service", "missed-bin" %><br><br>
         
@@ -49,6 +53,7 @@
 
         <%= f.submit "Submit", class: "btn btn-primary" %>
       <% end %>
+      
     </div>
     <div class="col-md-6 pre-scrollable" id="right-col">
       <h4>Waiting in queue: <%= @customers.count %></h4>
@@ -65,12 +70,6 @@
           <%= render @customers %>
         </tbody>
       </table>
-
-
-
-         <div id="queue" class="list-group row">
-        </div>
-      </ol>
     </div>
   </div>
 </div>
