@@ -1,4 +1,5 @@
 <h2>Code Test</h2>
+<img src="example.png" alt="An example of how the app looks">
 <h3>Framework and Language</h3>
 <p>To complete this coding test I used Ruby as I felt I could complete the majority of the criteria given that this is the language I would consider myself most proficient in. I then chose to use Ruby on Rails as this demonstrates my knowledge of the MVC model.</p>
 <p>In development it uses SQLite3 but in production it uses PostgreSQL for it's database. The SQLite3 database is perfect for development as it's easy to use, but PostgreSQL is a step up, might be a bit overkill for a simple queuing application but I went ahead and set it up anyway.</p>
