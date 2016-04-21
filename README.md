@@ -7,6 +7,9 @@
 <h3>Javascript/jQuery</h3>
 <p>Because it's just a simple web app I used AJAX to update the database with new customers to save from redirecting the browser each time, however the Customers controller is able to handle a normal HTTP request to create a customer too.</p>
 <p>The form has certain parts greyed out depending on which type of customer it is. If the form is filled out and a new customer type is selected then the form will clear itself.</p>
+<h3>Validations</h3>
+<p>I was going to add validations to check inputs depending on what customer type was selected as I know if a user has javascript disabled it would affect how the app functions, but I felt I had taken long enough with the test and didn't want to go over my time</p>
+<p>If I was to implement validations I would use client side input verification (Javascript), and then server side (on the Customer model itself) to be doubly sure submitted information was correct before saving to the database.</p>
 <h3>Running the app</h3>
 <ol>
   <li>Download from GitHub</li>
