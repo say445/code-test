@@ -1,2 +1,3 @@
 $('input:text').val('');
 $("#queue").html("<%= escape_javascript(render(@customers)) %>");
+$('#count').html("Waiting in queue: <%= @customers.count %>")

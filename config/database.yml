@@ -23,8 +23,10 @@ default: &default
 
 
 development:
-  <<: *default
-  database: development_db
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
 
 test:
   <<: *default
