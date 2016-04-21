@@ -11,16 +11,16 @@
       <%= form_for @customer, remote: true do |f| %>
         <div class="btn-group" data-toggle="buttons" >
 
-          <label class="btn btn-primary active" id="citizen-btn" for="customer_type">
-            <%= f.radio_button "type", "citizen" %> Citizen
+          <label class="btn btn-primary active" id="citizen-btn">
+            <%= f.radio_button "customer_type", "citizen", checked: true %> Citizen
           </label>
           
           <label class="btn btn-primary" id="organisation-btn">
-            <%= f.radio_button "type", "organisation" %> Organisation
+            <%= f.radio_button "customer_type", "organisation" %> Organisation
           </label>
 
           <label class="btn btn-primary" id="anonymous-btn">
-            <%= f.radio_button "type", "anonymous" %> Anonymous
+            <%= f.radio_button "customer_type", "anonymous" %> Anonymous
           </label>
         </div><br><br>
 
@@ -51,7 +51,7 @@
       <% end %>
     </div>
     <div class="col-md-6 pre-scrollable" id="right-col">
-      <h4>Waiting in queue:</h4>
+      <h4>Waiting in queue: <%= @customers.count %></h4>
       <table class="table">
         <thead>
           <tr>
@@ -62,7 +62,7 @@
           </tr>
         </thead>
         <tbody id="queue">
-          
+          <%= render @customers %>
         </tbody>
       </table>
 

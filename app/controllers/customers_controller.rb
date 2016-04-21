@@ -1,6 +1,7 @@
 class CustomersController < ApplicationController
   def index
     @customer  = Customer.new
+    @customers = Customer.all
   end
 
   def create
@@ -16,6 +17,6 @@ class CustomersController < ApplicationController
   private
 
   def customer_params
-    params.require("customer").permit(:type, :service, :organisation, :title, :first_name, :last_name)
+    params.require("customer").permit(:customer_type, :service, :organisation, :title, :first_name, :last_name)
   end
 end

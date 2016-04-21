@@ -1,8 +1,14 @@
 <tr>
-  <td>Row1</td>
-  <td>Row2</td>
-  <td>Row3</td>
-  <td>Row4</td>
+  <td><%= customer.customer_type.capitalize %></td>
+  <% if customer.customer_type == "organisation" %>
+    <td><%= customer.organisation %></td>
+  <% elsif customer.customer_type == "citizen" %>
+    <td><%= "#{customer.title.capitalize} #{customer.first_name.capitalize} #{customer.last_name.capitalize}" %></td>
+  <% else %>
+    <td>Anonymous</td>
+  <% end %>
+  <td><%= customer.service %></td>
+  <td><%= customer.created_at.strftime('%H:%M') %></td>
 </tr>
 
 
